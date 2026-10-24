@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*serviceAccount*.json
+*service-account*.json
+*firebase-adminsdk*.json
+*.pem
+*.key

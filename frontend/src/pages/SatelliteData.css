@@ -1,0 +1,70 @@
+.satellite-page {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+.satellite-note {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.satellite-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.satellite-panel {
+  min-width: 0;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.satellite-panel h2 {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.satellite-value {
+  margin: 0;
+  font-size: 28px;
+  color: #2d5b39;
+}
+
+.satellite-table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.satellite-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.satellite-table th,
+.satellite-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e8eee9;
+}
+
+.satellite-table th {
+  background: #edf4ee;
+  color: #2d5b39;
+}
+
+.satellite-table tbody tr:hover {
+  background: #f8faf8;
+}
+
+@media (max-width: 900px) {
+  .satellite-summary {
+    grid-template-columns: 1fr;
+  }
+}

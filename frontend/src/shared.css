@@ -1,0 +1,38 @@
+.card {
+  min-width: 0;
+  padding: 24px;
+  background: #fff;
+  border-radius: 16px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e8eee9;
+}
+
+.data-table th {
+  background: #edf4ee;
+  color: #2d5b39;
+}
+
+.data-table tbody tr:hover {
+  background: #f8faf8;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+  }
+}
