@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-    collection,
-    limit,
-    onSnapshot,
-    orderBy,
-    query,
-    Timestamp,
-    where,
-} from "firebase/firestore";
+import { collection, limit, orderBy, query, Timestamp, where } from "firebase/firestore";
+import { onSnapshot } from "../demoSnapshot.js";
 import { db } from "../firebase";
 import "./SensorData.css";
 
