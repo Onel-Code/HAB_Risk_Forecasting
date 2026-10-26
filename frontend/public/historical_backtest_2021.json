@@ -1,0 +1,2827 @@
+{
+  "dataset": "Lake Okeechobee Water Atlas-derived historical station-month observations (2019-2021)",
+  "test_type": "REAL_HISTORICAL_INSITU_ONLY_NEXT_MONTH_PROXY_BACKTEST",
+  "split": "Train target months up to December 2020; held-out target months January-December 2021",
+  "model": "Separate XGBoost sensor-trend baseline, NOT the saved five-feature satellite-fusion model",
+  "target": "Following-month maximum in-situ chlorophyll-a >= 40 ug/L; proxy event only, not toxicity or verified HAB",
+  "real_satellite_used": false,
+  "time_features": [
+    "temperature_c_median_t",
+    "pH_median_t",
+    "DO_mg_l_median_t",
+    "temperature_c_median_prev",
+    "pH_median_prev",
+    "DO_mg_l_median_prev",
+    "temperature_c_median_delta",
+    "pH_median_delta",
+    "DO_mg_l_median_delta"
+  ],
+  "source_rows": 240,
+  "training_examples": 128,
+  "test_examples": 75,
+  "training_positives": 14,
+  "test_positives": 8,
+  "metrics": {
+    "accuracy": 0.8,
+    "precision": 0.1111,
+    "recall": 0.125,
+    "f1": 0.1176,
+    "correct": 60,
+    "total": 75,
+    "confusion": {
+      "TN": 59,
+      "FP": 8,
+      "FN": 7,
+      "TP": 1
+    }
+  },
+  "always_no_bloom_baseline": {
+    "accuracy": 0.8933,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "correct": 67,
+    "total": 75,
+    "confusion": {
+      "TN": 67,
+      "FP": 0,
+      "FN": 8,
+      "TP": 0
+    }
+  },
+  "eight_month_by_station": {
+    "11562": [
+      {
+        "station_id": "11562",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 8.23,
+        "actual_next_month_chlorophyll_max_ug_l": 8.23,
+        "current_inputs": {
+          "temperature_c_median": 18.9,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 9.01
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.6000000000000014,
+          "pH_median": -0.20000000000000107,
+          "DO_mg_l_median": -0.9299999999999997
+        },
+        "probability": 0.0628,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 32.6,
+        "actual_next_month_chlorophyll_max_ug_l": 37.9,
+        "current_inputs": {
+          "temperature_c_median": 20.9,
+          "pH_median": 8.0,
+          "DO_mg_l_median": 8.46
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.0,
+          "pH_median": -0.1999999999999993,
+          "DO_mg_l_median": -0.5499999999999989
+        },
+        "probability": 0.0789,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 27.0,
+        "actual_next_month_chlorophyll_max_ug_l": 40.3,
+        "current_inputs": {
+          "temperature_c_median": 26.5,
+          "pH_median": 8.8,
+          "DO_mg_l_median": 7.77
+        },
+        "monthly_delta": {
+          "temperature_c_median": 5.600000000000001,
+          "pH_median": 0.8000000000000007,
+          "DO_mg_l_median": -0.6900000000000013
+        },
+        "probability": 0.4541,
+        "predicted": 0,
+        "correct": false
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 18.6,
+        "actual_next_month_chlorophyll_max_ug_l": 22.0,
+        "current_inputs": {
+          "temperature_c_median": 28.7,
+          "pH_median": 8.350000000000001,
+          "DO_mg_l_median": 7.275
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.1999999999999993,
+          "pH_median": -0.4499999999999993,
+          "DO_mg_l_median": -0.4949999999999992
+        },
+        "probability": 0.4366,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 32.9,
+        "actual_next_month_chlorophyll_max_ug_l": 36.1,
+        "current_inputs": {
+          "temperature_c_median": 28.65,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 7.109999999999999
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.05000000000000071,
+          "pH_median": -0.15000000000000213,
+          "DO_mg_l_median": -0.16500000000000092
+        },
+        "probability": 0.2394,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-08",
+        "target_month": "2021-09",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 23.05,
+        "actual_next_month_chlorophyll_max_ug_l": 26.0,
+        "current_inputs": {
+          "temperature_c_median": 30.15,
+          "pH_median": 7.949999999999999,
+          "DO_mg_l_median": 6.04
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.5,
+          "pH_median": -0.25,
+          "DO_mg_l_median": -1.0699999999999994
+        },
+        "probability": 0.4288,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-09",
+        "target_month": "2021-10",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 24.1,
+        "actual_next_month_chlorophyll_max_ug_l": 26.1,
+        "current_inputs": {
+          "temperature_c_median": 29.15,
+          "pH_median": 7.699999999999999,
+          "DO_mg_l_median": 6.025
+        },
+        "monthly_delta": {
+          "temperature_c_median": -1.0,
+          "pH_median": -0.25,
+          "DO_mg_l_median": -0.01499999999999968
+        },
+        "probability": 0.6377,
+        "predicted": 1,
+        "correct": false
+      },
+      {
+        "station_id": "11562",
+        "input_month": "2021-10",
+        "target_month": "2021-11",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 10.5,
+        "actual_next_month_chlorophyll_max_ug_l": 10.5,
+        "current_inputs": {
+          "temperature_c_median": 26.5,
+          "pH_median": 7.9,
+          "DO_mg_l_median": 7.415
+        },
+        "monthly_delta": {
+          "temperature_c_median": -2.6499999999999986,
+          "pH_median": 0.20000000000000107,
+          "DO_mg_l_median": 1.3899999999999997
+        },
+        "probability": 0.1449,
+        "predicted": 0,
+        "correct": true
+      }
+    ],
+    "11569": [
+      {
+        "station_id": "11569",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 12.2,
+        "actual_next_month_chlorophyll_max_ug_l": 12.2,
+        "current_inputs": {
+          "temperature_c_median": 19.3,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 8.98
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.09999999999999787,
+          "pH_median": 0.0,
+          "DO_mg_l_median": -0.9599999999999991
+        },
+        "probability": 0.0718,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 19.700000000000003,
+        "actual_next_month_chlorophyll_max_ug_l": 22.8,
+        "current_inputs": {
+          "temperature_c_median": 21.8,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 8.58
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.5,
+          "pH_median": -0.20000000000000107,
+          "DO_mg_l_median": -0.40000000000000036
+        },
+        "probability": 0.143,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 12.92,
+        "actual_next_month_chlorophyll_max_ug_l": 17.5,
+        "current_inputs": {
+          "temperature_c_median": 26.8,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 7.955
+        },
+        "monthly_delta": {
+          "temperature_c_median": 5.0,
+          "pH_median": 0.20000000000000107,
+          "DO_mg_l_median": -0.625
+        },
+        "probability": 0.462,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 18.9,
+        "actual_next_month_chlorophyll_max_ug_l": 21.2,
+        "current_inputs": {
+          "temperature_c_median": 28.6,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 7.605
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.8000000000000007,
+          "pH_median": 0.09999999999999964,
+          "DO_mg_l_median": -0.34999999999999964
+        },
+        "probability": 0.4992,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 14.25,
+        "actual_next_month_chlorophyll_max_ug_l": 15.9,
+        "current_inputs": {
+          "temperature_c_median": 28.8,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.565
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.1999999999999993,
+          "pH_median": -0.15000000000000036,
+          "DO_mg_l_median": -0.040000000000000036
+        },
+        "probability": 0.2148,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-08",
+        "target_month": "2021-09",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 14.100000000000001,
+        "actual_next_month_chlorophyll_max_ug_l": 18.1,
+        "current_inputs": {
+          "temperature_c_median": 29.9,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 6.775
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.0999999999999979,
+          "pH_median": 0.05000000000000071,
+          "DO_mg_l_median": -0.79
+        },
+        "probability": 0.4678,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-09",
+        "target_month": "2021-10",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 14.55,
+        "actual_next_month_chlorophyll_max_ug_l": 14.6,
+        "current_inputs": {
+          "temperature_c_median": 29.2,
+          "pH_median": 8.05,
+          "DO_mg_l_median": 6.71
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.6999999999999993,
+          "pH_median": -0.25,
+          "DO_mg_l_median": -0.06500000000000039
+        },
+        "probability": 0.7296,
+        "predicted": 1,
+        "correct": false
+      },
+      {
+        "station_id": "11569",
+        "input_month": "2021-10",
+        "target_month": "2021-11",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 15.0,
+        "actual_next_month_chlorophyll_max_ug_l": 15.0,
+        "current_inputs": {
+          "temperature_c_median": 27.0,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 7.845000000000001
+        },
+        "monthly_delta": {
+          "temperature_c_median": -2.1999999999999993,
+          "pH_median": 0.049999999999998934,
+          "DO_mg_l_median": 1.1350000000000007
+        },
+        "probability": 0.1915,
+        "predicted": 0,
+        "correct": true
+      }
+    ],
+    "11573": [
+      {
+        "station_id": "11573",
+        "input_month": "2020-12",
+        "target_month": "2021-01",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 4.38,
+        "actual_next_month_chlorophyll_max_ug_l": 4.38,
+        "current_inputs": {
+          "temperature_c_median": 19.7,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 9.37
+        },
+        "monthly_delta": {
+          "temperature_c_median": -4.0,
+          "pH_median": 0.20000000000000107,
+          "DO_mg_l_median": 1.1799999999999997
+        },
+        "probability": 0.0972,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-01",
+        "target_month": "2021-02",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 4.49,
+        "actual_next_month_chlorophyll_max_ug_l": 4.49,
+        "current_inputs": {
+          "temperature_c_median": 18.6,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 9.25
+        },
+        "monthly_delta": {
+          "temperature_c_median": -1.0999999999999979,
+          "pH_median": -0.10000000000000142,
+          "DO_mg_l_median": -0.11999999999999922
+        },
+        "probability": 0.0541,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-02",
+        "target_month": "2021-03",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 4.98,
+        "actual_next_month_chlorophyll_max_ug_l": 4.98,
+        "current_inputs": {
+          "temperature_c_median": 23.0,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 10.3
+        },
+        "monthly_delta": {
+          "temperature_c_median": 4.399999999999999,
+          "pH_median": 0.10000000000000142,
+          "DO_mg_l_median": 1.0500000000000007
+        },
+        "probability": 0.1606,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 5.32,
+        "actual_next_month_chlorophyll_max_ug_l": 5.32,
+        "current_inputs": {
+          "temperature_c_median": 19.9,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 9.16
+        },
+        "monthly_delta": {
+          "temperature_c_median": -3.1000000000000014,
+          "pH_median": 0.0,
+          "DO_mg_l_median": -1.1400000000000006
+        },
+        "probability": 0.072,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 7.33,
+        "actual_next_month_chlorophyll_max_ug_l": 8.44,
+        "current_inputs": {
+          "temperature_c_median": 21.7,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 8.74
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.8000000000000007,
+          "pH_median": 0.09999999999999964,
+          "DO_mg_l_median": -0.41999999999999993
+        },
+        "probability": 0.0765,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 6.48,
+        "actual_next_month_chlorophyll_max_ug_l": 6.82,
+        "current_inputs": {
+          "temperature_c_median": 26.450000000000003,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 7.915000000000001
+        },
+        "monthly_delta": {
+          "temperature_c_median": 4.7500000000000036,
+          "pH_median": -0.09999999999999964,
+          "DO_mg_l_median": -0.8249999999999993
+        },
+        "probability": 0.391,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 9.504999999999999,
+        "actual_next_month_chlorophyll_max_ug_l": 10.5,
+        "current_inputs": {
+          "temperature_c_median": 29.0,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.25
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.549999999999997,
+          "pH_median": -0.05000000000000071,
+          "DO_mg_l_median": -0.6650000000000009
+        },
+        "probability": 0.6953,
+        "predicted": 1,
+        "correct": false
+      },
+      {
+        "station_id": "11573",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 4.2,
+        "actual_next_month_chlorophyll_max_ug_l": 4.82,
+        "current_inputs": {
+          "temperature_c_median": 28.549999999999997,
+          "pH_median": 8.350000000000001,
+          "DO_mg_l_median": 7.9
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.45000000000000284,
+          "pH_median": 0.10000000000000142,
+          "DO_mg_l_median": 0.6500000000000004
+        },
+        "probability": 0.1504,
+        "predicted": 0,
+        "correct": true
+      }
+    ],
+    "11576": [
+      {
+        "station_id": "11576",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 7.32,
+        "actual_next_month_chlorophyll_max_ug_l": 7.32,
+        "current_inputs": {
+          "temperature_c_median": 19.4,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 8.97
+        },
+        "monthly_delta": {
+          "temperature_c_median": -1.3000000000000007,
+          "pH_median": -0.10000000000000142,
+          "DO_mg_l_median": -0.47999999999999865
+        },
+        "probability": 0.0655,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 14.350000000000001,
+        "actual_next_month_chlorophyll_max_ug_l": 15.8,
+        "current_inputs": {
+          "temperature_c_median": 21.7,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 8.76
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.3000000000000007,
+          "pH_median": -0.09999999999999964,
+          "DO_mg_l_median": -0.21000000000000085
+        },
+        "probability": 0.1163,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 11.82,
+        "actual_next_month_chlorophyll_max_ug_l": 14.3,
+        "current_inputs": {
+          "temperature_c_median": 26.799999999999997,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.970000000000001
+        },
+        "monthly_delta": {
+          "temperature_c_median": 5.099999999999998,
+          "pH_median": 0.15000000000000036,
+          "DO_mg_l_median": -0.7899999999999991
+        },
+        "probability": 0.4716,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 15.450000000000001,
+        "actual_next_month_chlorophyll_max_ug_l": 18.1,
+        "current_inputs": {
+          "temperature_c_median": 28.5,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.37
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.7000000000000028,
+          "pH_median": 0.0,
+          "DO_mg_l_median": -0.6000000000000005
+        },
+        "probability": 0.5303,
+        "predicted": 1,
+        "correct": false
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 15.9,
+        "actual_next_month_chlorophyll_max_ug_l": 23.6,
+        "current_inputs": {
+          "temperature_c_median": 29.15,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 8.125
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.6499999999999986,
+          "pH_median": 0.15000000000000036,
+          "DO_mg_l_median": 0.7549999999999999
+        },
+        "probability": 0.1135,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-08",
+        "target_month": "2021-09",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 36.75,
+        "actual_next_month_chlorophyll_max_ug_l": 52.2,
+        "current_inputs": {
+          "temperature_c_median": 29.95,
+          "pH_median": 8.45,
+          "DO_mg_l_median": 6.77
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.8000000000000007,
+          "pH_median": 0.049999999999998934,
+          "DO_mg_l_median": -1.3550000000000004
+        },
+        "probability": 0.7733,
+        "predicted": 1,
+        "correct": true
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-09",
+        "target_month": "2021-10",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 58.4,
+        "actual_next_month_chlorophyll_max_ug_l": 60.4,
+        "current_inputs": {
+          "temperature_c_median": 29.45,
+          "pH_median": 8.5,
+          "DO_mg_l_median": 7.734999999999999
+        },
+        "monthly_delta": {
+          "temperature_c_median": -0.5,
+          "pH_median": 0.05000000000000071,
+          "DO_mg_l_median": 0.9649999999999999
+        },
+        "probability": 0.4856,
+        "predicted": 0,
+        "correct": false
+      },
+      {
+        "station_id": "11576",
+        "input_month": "2021-10",
+        "target_month": "2021-11",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 47.0,
+        "actual_next_month_chlorophyll_max_ug_l": 47.0,
+        "current_inputs": {
+          "temperature_c_median": 26.8,
+          "pH_median": 8.399999999999999,
+          "DO_mg_l_median": 7.475
+        },
+        "monthly_delta": {
+          "temperature_c_median": -2.6499999999999986,
+          "pH_median": -0.10000000000000142,
+          "DO_mg_l_median": -0.2599999999999998
+        },
+        "probability": 0.1866,
+        "predicted": 0,
+        "correct": false
+      }
+    ],
+    "12877": [
+      {
+        "station_id": "12877",
+        "input_month": "2020-12",
+        "target_month": "2021-01",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 7.03,
+        "actual_next_month_chlorophyll_max_ug_l": 7.03,
+        "current_inputs": {
+          "temperature_c_median": 20.3,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 9.64
+        },
+        "monthly_delta": {
+          "temperature_c_median": -3.3000000000000007,
+          "pH_median": 0.09999999999999964,
+          "DO_mg_l_median": 1.2800000000000011
+        },
+        "probability": 0.0947,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-01",
+        "target_month": "2021-02",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 19.6,
+        "actual_next_month_chlorophyll_max_ug_l": 19.6,
+        "current_inputs": {
+          "temperature_c_median": 18.4,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 9.23
+        },
+        "monthly_delta": {
+          "temperature_c_median": -1.9000000000000021,
+          "pH_median": -0.20000000000000107,
+          "DO_mg_l_median": -0.41000000000000014
+        },
+        "probability": 0.0655,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-02",
+        "target_month": "2021-03",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 8.44,
+        "actual_next_month_chlorophyll_max_ug_l": 8.44,
+        "current_inputs": {
+          "temperature_c_median": 21.4,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 9.43
+        },
+        "monthly_delta": {
+          "temperature_c_median": 3.0,
+          "pH_median": 0.20000000000000107,
+          "DO_mg_l_median": 0.1999999999999993
+        },
+        "probability": 0.1425,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 8.22,
+        "actual_next_month_chlorophyll_max_ug_l": 8.22,
+        "current_inputs": {
+          "temperature_c_median": 19.8,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 6.27
+        },
+        "monthly_delta": {
+          "temperature_c_median": -1.5999999999999979,
+          "pH_median": -0.3000000000000007,
+          "DO_mg_l_median": -3.16
+        },
+        "probability": 0.1067,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 9.265,
+        "actual_next_month_chlorophyll_max_ug_l": 10.7,
+        "current_inputs": {
+          "temperature_c_median": 21.6,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 8.81
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.8000000000000007,
+          "pH_median": 0.3000000000000007,
+          "DO_mg_l_median": 2.540000000000001
+        },
+        "probability": 0.1084,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 7.275,
+        "actual_next_month_chlorophyll_max_ug_l": 8.21,
+        "current_inputs": {
+          "temperature_c_median": 26.5,
+          "pH_median": 8.45,
+          "DO_mg_l_median": 8.135
+        },
+        "monthly_delta": {
+          "temperature_c_median": 4.899999999999999,
+          "pH_median": 0.049999999999998934,
+          "DO_mg_l_median": -0.6750000000000007
+        },
+        "probability": 0.3271,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 8.2,
+        "actual_next_month_chlorophyll_max_ug_l": 8.62,
+        "current_inputs": {
+          "temperature_c_median": 28.1,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.095000000000001
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.6000000000000014,
+          "pH_median": -0.1999999999999993,
+          "DO_mg_l_median": -1.0399999999999991
+        },
+        "probability": 0.4363,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "12877",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 16.345,
+        "actual_next_month_chlorophyll_max_ug_l": 29.1,
+        "current_inputs": {
+          "temperature_c_median": 28.8,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 7.625
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.6999999999999993,
+          "pH_median": 0.15000000000000036,
+          "DO_mg_l_median": 0.5299999999999994
+        },
+        "probability": 0.1644,
+        "predicted": 0,
+        "correct": true
+      }
+    ],
+    "17625": [
+      {
+        "station_id": "17625",
+        "input_month": "2020-12",
+        "target_month": "2021-01",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 16.15,
+        "actual_next_month_chlorophyll_max_ug_l": 25.8,
+        "current_inputs": {
+          "temperature_c_median": 17.25,
+          "pH_median": 7.9,
+          "DO_mg_l_median": 8.579999999999998
+        },
+        "monthly_delta": {
+          "temperature_c_median": -8.149999999999999,
+          "pH_median": -0.09999999999999964,
+          "DO_mg_l_median": 1.799999999999998
+        },
+        "probability": 0.0864,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-01",
+        "target_month": "2021-02",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 16.490000000000002,
+        "actual_next_month_chlorophyll_max_ug_l": 27.3,
+        "current_inputs": {
+          "temperature_c_median": 17.95,
+          "pH_median": 8.05,
+          "DO_mg_l_median": 9.15
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.6999999999999993,
+          "pH_median": 0.15000000000000036,
+          "DO_mg_l_median": 0.5700000000000021
+        },
+        "probability": 0.0661,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-02",
+        "target_month": "2021-03",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 16.0,
+        "actual_next_month_chlorophyll_max_ug_l": 16.0,
+        "current_inputs": {
+          "temperature_c_median": 19.9,
+          "pH_median": 8.05,
+          "DO_mg_l_median": 8.620000000000001
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.9499999999999993,
+          "pH_median": 0.0,
+          "DO_mg_l_median": -0.5299999999999994
+        },
+        "probability": 0.0912,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 94.18,
+        "actual_next_month_chlorophyll_max_ug_l": 182.0,
+        "current_inputs": {
+          "temperature_c_median": 19.9,
+          "pH_median": 8.399999999999999,
+          "DO_mg_l_median": 8.305
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.0,
+          "pH_median": 0.34999999999999787,
+          "DO_mg_l_median": -0.3150000000000013
+        },
+        "probability": 0.0731,
+        "predicted": 0,
+        "correct": false
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 71.75,
+        "actual_next_month_chlorophyll_max_ug_l": 116.0,
+        "current_inputs": {
+          "temperature_c_median": 24.75,
+          "pH_median": 8.25,
+          "DO_mg_l_median": 7.49
+        },
+        "monthly_delta": {
+          "temperature_c_median": 4.850000000000001,
+          "pH_median": -0.14999999999999858,
+          "DO_mg_l_median": -0.8149999999999995
+        },
+        "probability": 0.4707,
+        "predicted": 0,
+        "correct": false
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 20.6,
+        "actual_next_month_chlorophyll_max_ug_l": 74.1,
+        "current_inputs": {
+          "temperature_c_median": 26.35,
+          "pH_median": 7.75,
+          "DO_mg_l_median": 5.055
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.6000000000000014,
+          "pH_median": -0.5,
+          "DO_mg_l_median": -2.4350000000000005
+        },
+        "probability": 0.2671,
+        "predicted": 0,
+        "correct": false
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 9.385,
+        "actual_next_month_chlorophyll_max_ug_l": 13.1,
+        "current_inputs": {
+          "temperature_c_median": 27.6,
+          "pH_median": 8.0,
+          "DO_mg_l_median": 5.7
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.25,
+          "pH_median": 0.25,
+          "DO_mg_l_median": 0.6450000000000005
+        },
+        "probability": 0.2214,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "17625",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 15.780000000000001,
+        "actual_next_month_chlorophyll_max_ug_l": 23.3,
+        "current_inputs": {
+          "temperature_c_median": 30.0,
+          "pH_median": 7.55,
+          "DO_mg_l_median": 4.695
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.3999999999999986,
+          "pH_median": -0.4500000000000002,
+          "DO_mg_l_median": -1.005
+        },
+        "probability": 0.6579,
+        "predicted": 1,
+        "correct": false
+      }
+    ],
+    "31067": [
+      {
+        "station_id": "31067",
+        "input_month": "2020-12",
+        "target_month": "2021-01",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 6.68,
+        "actual_next_month_chlorophyll_max_ug_l": 6.68,
+        "current_inputs": {
+          "temperature_c_median": 20.2,
+          "pH_median": 8.2,
+          "DO_mg_l_median": 9.03
+        },
+        "monthly_delta": {
+          "temperature_c_median": -3.1000000000000014,
+          "pH_median": 0.0,
+          "DO_mg_l_median": 0.6799999999999997
+        },
+        "probability": 0.1084,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-01",
+        "target_month": "2021-02",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 8.2,
+        "actual_next_month_chlorophyll_max_ug_l": 8.2,
+        "current_inputs": {
+          "temperature_c_median": 18.1,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 9.23
+        },
+        "monthly_delta": {
+          "temperature_c_median": -2.099999999999998,
+          "pH_median": 0.10000000000000142,
+          "DO_mg_l_median": 0.20000000000000107
+        },
+        "probability": 0.0613,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-02",
+        "target_month": "2021-03",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 5.22,
+        "actual_next_month_chlorophyll_max_ug_l": 5.22,
+        "current_inputs": {
+          "temperature_c_median": 21.4,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 9.36
+        },
+        "monthly_delta": {
+          "temperature_c_median": 3.299999999999997,
+          "pH_median": 0.0,
+          "DO_mg_l_median": 0.129999999999999
+        },
+        "probability": 0.1358,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-03",
+        "target_month": "2021-04",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 18.4,
+        "actual_next_month_chlorophyll_max_ug_l": 18.4,
+        "current_inputs": {
+          "temperature_c_median": 19.4,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 9.13
+        },
+        "monthly_delta": {
+          "temperature_c_median": -2.0,
+          "pH_median": -0.20000000000000107,
+          "DO_mg_l_median": -0.22999999999999865
+        },
+        "probability": 0.0617,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-04",
+        "target_month": "2021-05",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 7.640000000000001,
+        "actual_next_month_chlorophyll_max_ug_l": 7.94,
+        "current_inputs": {
+          "temperature_c_median": 21.7,
+          "pH_median": 8.4,
+          "DO_mg_l_median": 8.74
+        },
+        "monthly_delta": {
+          "temperature_c_median": 2.3000000000000007,
+          "pH_median": 0.3000000000000007,
+          "DO_mg_l_median": -0.39000000000000057
+        },
+        "probability": 0.1446,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-05",
+        "target_month": "2021-06",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 4.745,
+        "actual_next_month_chlorophyll_max_ug_l": 6.83,
+        "current_inputs": {
+          "temperature_c_median": 26.65,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 7.9
+        },
+        "monthly_delta": {
+          "temperature_c_median": 4.949999999999999,
+          "pH_median": -0.09999999999999964,
+          "DO_mg_l_median": -0.8399999999999999
+        },
+        "probability": 0.391,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-06",
+        "target_month": "2021-07",
+        "actual": 0,
+        "actual_next_month_chlorophyll_ug_l": 5.15,
+        "actual_next_month_chlorophyll_max_ug_l": 7.29,
+        "current_inputs": {
+          "temperature_c_median": 27.799999999999997,
+          "pH_median": 8.1,
+          "DO_mg_l_median": 6.75
+        },
+        "monthly_delta": {
+          "temperature_c_median": 1.1499999999999986,
+          "pH_median": -0.20000000000000107,
+          "DO_mg_l_median": -1.1500000000000004
+        },
+        "probability": 0.4939,
+        "predicted": 0,
+        "correct": true
+      },
+      {
+        "station_id": "31067",
+        "input_month": "2021-07",
+        "target_month": "2021-08",
+        "actual": 1,
+        "actual_next_month_chlorophyll_ug_l": 78.1,
+        "actual_next_month_chlorophyll_max_ug_l": 140.0,
+        "current_inputs": {
+          "temperature_c_median": 28.299999999999997,
+          "pH_median": 8.3,
+          "DO_mg_l_median": 7.305
+        },
+        "monthly_delta": {
+          "temperature_c_median": 0.5,
+          "pH_median": 0.20000000000000107,
+          "DO_mg_l_median": 0.5549999999999997
+        },
+        "probability": 0.3011,
+        "predicted": 0,
+        "correct": false
+      }
+    ]
+  },
+  "all_test_results": [
+    {
+      "station_id": "11573",
+      "input_month": "2020-12",
+      "target_month": "2021-01",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.38,
+      "actual_next_month_chlorophyll_max_ug_l": 4.38,
+      "current_inputs": {
+        "temperature_c_median": 19.7,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 9.37
+      },
+      "monthly_delta": {
+        "temperature_c_median": -4.0,
+        "pH_median": 0.20000000000000107,
+        "DO_mg_l_median": 1.1799999999999997
+      },
+      "probability": 0.0972,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2020-12",
+      "target_month": "2021-01",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.03,
+      "actual_next_month_chlorophyll_max_ug_l": 7.03,
+      "current_inputs": {
+        "temperature_c_median": 20.3,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 9.64
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.3000000000000007,
+        "pH_median": 0.09999999999999964,
+        "DO_mg_l_median": 1.2800000000000011
+      },
+      "probability": 0.0947,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2020-12",
+      "target_month": "2021-01",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 16.15,
+      "actual_next_month_chlorophyll_max_ug_l": 25.8,
+      "current_inputs": {
+        "temperature_c_median": 17.25,
+        "pH_median": 7.9,
+        "DO_mg_l_median": 8.579999999999998
+      },
+      "monthly_delta": {
+        "temperature_c_median": -8.149999999999999,
+        "pH_median": -0.09999999999999964,
+        "DO_mg_l_median": 1.799999999999998
+      },
+      "probability": 0.0864,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2020-12",
+      "target_month": "2021-01",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 6.68,
+      "actual_next_month_chlorophyll_max_ug_l": 6.68,
+      "current_inputs": {
+        "temperature_c_median": 20.2,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 9.03
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.1000000000000014,
+        "pH_median": 0.0,
+        "DO_mg_l_median": 0.6799999999999997
+      },
+      "probability": 0.1084,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-01",
+      "target_month": "2021-02",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.49,
+      "actual_next_month_chlorophyll_max_ug_l": 4.49,
+      "current_inputs": {
+        "temperature_c_median": 18.6,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 9.25
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.0999999999999979,
+        "pH_median": -0.10000000000000142,
+        "DO_mg_l_median": -0.11999999999999922
+      },
+      "probability": 0.0541,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-01",
+      "target_month": "2021-02",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 19.6,
+      "actual_next_month_chlorophyll_max_ug_l": 19.6,
+      "current_inputs": {
+        "temperature_c_median": 18.4,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 9.23
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.9000000000000021,
+        "pH_median": -0.20000000000000107,
+        "DO_mg_l_median": -0.41000000000000014
+      },
+      "probability": 0.0655,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-01",
+      "target_month": "2021-02",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 16.490000000000002,
+      "actual_next_month_chlorophyll_max_ug_l": 27.3,
+      "current_inputs": {
+        "temperature_c_median": 17.95,
+        "pH_median": 8.05,
+        "DO_mg_l_median": 9.15
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.6999999999999993,
+        "pH_median": 0.15000000000000036,
+        "DO_mg_l_median": 0.5700000000000021
+      },
+      "probability": 0.0661,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-01",
+      "target_month": "2021-02",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.2,
+      "actual_next_month_chlorophyll_max_ug_l": 8.2,
+      "current_inputs": {
+        "temperature_c_median": 18.1,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 9.23
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.099999999999998,
+        "pH_median": 0.10000000000000142,
+        "DO_mg_l_median": 0.20000000000000107
+      },
+      "probability": 0.0613,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-02",
+      "target_month": "2021-03",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.98,
+      "actual_next_month_chlorophyll_max_ug_l": 4.98,
+      "current_inputs": {
+        "temperature_c_median": 23.0,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 10.3
+      },
+      "monthly_delta": {
+        "temperature_c_median": 4.399999999999999,
+        "pH_median": 0.10000000000000142,
+        "DO_mg_l_median": 1.0500000000000007
+      },
+      "probability": 0.1606,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-02",
+      "target_month": "2021-03",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.44,
+      "actual_next_month_chlorophyll_max_ug_l": 8.44,
+      "current_inputs": {
+        "temperature_c_median": 21.4,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 9.43
+      },
+      "monthly_delta": {
+        "temperature_c_median": 3.0,
+        "pH_median": 0.20000000000000107,
+        "DO_mg_l_median": 0.1999999999999993
+      },
+      "probability": 0.1425,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-02",
+      "target_month": "2021-03",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 16.0,
+      "actual_next_month_chlorophyll_max_ug_l": 16.0,
+      "current_inputs": {
+        "temperature_c_median": 19.9,
+        "pH_median": 8.05,
+        "DO_mg_l_median": 8.620000000000001
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.9499999999999993,
+        "pH_median": 0.0,
+        "DO_mg_l_median": -0.5299999999999994
+      },
+      "probability": 0.0912,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-02",
+      "target_month": "2021-03",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 5.22,
+      "actual_next_month_chlorophyll_max_ug_l": 5.22,
+      "current_inputs": {
+        "temperature_c_median": 21.4,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 9.36
+      },
+      "monthly_delta": {
+        "temperature_c_median": 3.299999999999997,
+        "pH_median": 0.0,
+        "DO_mg_l_median": 0.129999999999999
+      },
+      "probability": 0.1358,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.23,
+      "actual_next_month_chlorophyll_max_ug_l": 8.23,
+      "current_inputs": {
+        "temperature_c_median": 18.9,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 9.01
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.6000000000000014,
+        "pH_median": -0.20000000000000107,
+        "DO_mg_l_median": -0.9299999999999997
+      },
+      "probability": 0.0628,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 12.2,
+      "actual_next_month_chlorophyll_max_ug_l": 12.2,
+      "current_inputs": {
+        "temperature_c_median": 19.3,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 8.98
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.09999999999999787,
+        "pH_median": 0.0,
+        "DO_mg_l_median": -0.9599999999999991
+      },
+      "probability": 0.0718,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 5.32,
+      "actual_next_month_chlorophyll_max_ug_l": 5.32,
+      "current_inputs": {
+        "temperature_c_median": 19.9,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 9.16
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.1000000000000014,
+        "pH_median": 0.0,
+        "DO_mg_l_median": -1.1400000000000006
+      },
+      "probability": 0.072,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.32,
+      "actual_next_month_chlorophyll_max_ug_l": 7.32,
+      "current_inputs": {
+        "temperature_c_median": 19.4,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 8.97
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.3000000000000007,
+        "pH_median": -0.10000000000000142,
+        "DO_mg_l_median": -0.47999999999999865
+      },
+      "probability": 0.0655,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.22,
+      "actual_next_month_chlorophyll_max_ug_l": 8.22,
+      "current_inputs": {
+        "temperature_c_median": 19.8,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 6.27
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.5999999999999979,
+        "pH_median": -0.3000000000000007,
+        "DO_mg_l_median": -3.16
+      },
+      "probability": 0.1067,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 94.18,
+      "actual_next_month_chlorophyll_max_ug_l": 182.0,
+      "current_inputs": {
+        "temperature_c_median": 19.9,
+        "pH_median": 8.399999999999999,
+        "DO_mg_l_median": 8.305
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.0,
+        "pH_median": 0.34999999999999787,
+        "DO_mg_l_median": -0.3150000000000013
+      },
+      "probability": 0.0731,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-03",
+      "target_month": "2021-04",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 18.4,
+      "actual_next_month_chlorophyll_max_ug_l": 18.4,
+      "current_inputs": {
+        "temperature_c_median": 19.4,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 9.13
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.0,
+        "pH_median": -0.20000000000000107,
+        "DO_mg_l_median": -0.22999999999999865
+      },
+      "probability": 0.0617,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 32.6,
+      "actual_next_month_chlorophyll_max_ug_l": 37.9,
+      "current_inputs": {
+        "temperature_c_median": 20.9,
+        "pH_median": 8.0,
+        "DO_mg_l_median": 8.46
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.0,
+        "pH_median": -0.1999999999999993,
+        "DO_mg_l_median": -0.5499999999999989
+      },
+      "probability": 0.0789,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 19.700000000000003,
+      "actual_next_month_chlorophyll_max_ug_l": 22.8,
+      "current_inputs": {
+        "temperature_c_median": 21.8,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 8.58
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.5,
+        "pH_median": -0.20000000000000107,
+        "DO_mg_l_median": -0.40000000000000036
+      },
+      "probability": 0.143,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.33,
+      "actual_next_month_chlorophyll_max_ug_l": 8.44,
+      "current_inputs": {
+        "temperature_c_median": 21.7,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.74
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.8000000000000007,
+        "pH_median": 0.09999999999999964,
+        "DO_mg_l_median": -0.41999999999999993
+      },
+      "probability": 0.0765,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 14.350000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 15.8,
+      "current_inputs": {
+        "temperature_c_median": 21.7,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 8.76
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.3000000000000007,
+        "pH_median": -0.09999999999999964,
+        "DO_mg_l_median": -0.21000000000000085
+      },
+      "probability": 0.1163,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 9.265,
+      "actual_next_month_chlorophyll_max_ug_l": 10.7,
+      "current_inputs": {
+        "temperature_c_median": 21.6,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.81
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.8000000000000007,
+        "pH_median": 0.3000000000000007,
+        "DO_mg_l_median": 2.540000000000001
+      },
+      "probability": 0.1084,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 71.75,
+      "actual_next_month_chlorophyll_max_ug_l": 116.0,
+      "current_inputs": {
+        "temperature_c_median": 24.75,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.49
+      },
+      "monthly_delta": {
+        "temperature_c_median": 4.850000000000001,
+        "pH_median": -0.14999999999999858,
+        "DO_mg_l_median": -0.8149999999999995
+      },
+      "probability": 0.4707,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-04",
+      "target_month": "2021-05",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.640000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 7.94,
+      "current_inputs": {
+        "temperature_c_median": 21.7,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.74
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.3000000000000007,
+        "pH_median": 0.3000000000000007,
+        "DO_mg_l_median": -0.39000000000000057
+      },
+      "probability": 0.1446,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 27.0,
+      "actual_next_month_chlorophyll_max_ug_l": 40.3,
+      "current_inputs": {
+        "temperature_c_median": 26.5,
+        "pH_median": 8.8,
+        "DO_mg_l_median": 7.77
+      },
+      "monthly_delta": {
+        "temperature_c_median": 5.600000000000001,
+        "pH_median": 0.8000000000000007,
+        "DO_mg_l_median": -0.6900000000000013
+      },
+      "probability": 0.4541,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 12.92,
+      "actual_next_month_chlorophyll_max_ug_l": 17.5,
+      "current_inputs": {
+        "temperature_c_median": 26.8,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 7.955
+      },
+      "monthly_delta": {
+        "temperature_c_median": 5.0,
+        "pH_median": 0.20000000000000107,
+        "DO_mg_l_median": -0.625
+      },
+      "probability": 0.462,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 6.48,
+      "actual_next_month_chlorophyll_max_ug_l": 6.82,
+      "current_inputs": {
+        "temperature_c_median": 26.450000000000003,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 7.915000000000001
+      },
+      "monthly_delta": {
+        "temperature_c_median": 4.7500000000000036,
+        "pH_median": -0.09999999999999964,
+        "DO_mg_l_median": -0.8249999999999993
+      },
+      "probability": 0.391,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 11.82,
+      "actual_next_month_chlorophyll_max_ug_l": 14.3,
+      "current_inputs": {
+        "temperature_c_median": 26.799999999999997,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.970000000000001
+      },
+      "monthly_delta": {
+        "temperature_c_median": 5.099999999999998,
+        "pH_median": 0.15000000000000036,
+        "DO_mg_l_median": -0.7899999999999991
+      },
+      "probability": 0.4716,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.275,
+      "actual_next_month_chlorophyll_max_ug_l": 8.21,
+      "current_inputs": {
+        "temperature_c_median": 26.5,
+        "pH_median": 8.45,
+        "DO_mg_l_median": 8.135
+      },
+      "monthly_delta": {
+        "temperature_c_median": 4.899999999999999,
+        "pH_median": 0.049999999999998934,
+        "DO_mg_l_median": -0.6750000000000007
+      },
+      "probability": 0.3271,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 20.6,
+      "actual_next_month_chlorophyll_max_ug_l": 74.1,
+      "current_inputs": {
+        "temperature_c_median": 26.35,
+        "pH_median": 7.75,
+        "DO_mg_l_median": 5.055
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.6000000000000014,
+        "pH_median": -0.5,
+        "DO_mg_l_median": -2.4350000000000005
+      },
+      "probability": 0.2671,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-05",
+      "target_month": "2021-06",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.745,
+      "actual_next_month_chlorophyll_max_ug_l": 6.83,
+      "current_inputs": {
+        "temperature_c_median": 26.65,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 7.9
+      },
+      "monthly_delta": {
+        "temperature_c_median": 4.949999999999999,
+        "pH_median": -0.09999999999999964,
+        "DO_mg_l_median": -0.8399999999999999
+      },
+      "probability": 0.391,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 18.6,
+      "actual_next_month_chlorophyll_max_ug_l": 22.0,
+      "current_inputs": {
+        "temperature_c_median": 28.7,
+        "pH_median": 8.350000000000001,
+        "DO_mg_l_median": 7.275
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.1999999999999993,
+        "pH_median": -0.4499999999999993,
+        "DO_mg_l_median": -0.4949999999999992
+      },
+      "probability": 0.4366,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 18.9,
+      "actual_next_month_chlorophyll_max_ug_l": 21.2,
+      "current_inputs": {
+        "temperature_c_median": 28.6,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 7.605
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.8000000000000007,
+        "pH_median": 0.09999999999999964,
+        "DO_mg_l_median": -0.34999999999999964
+      },
+      "probability": 0.4992,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 9.504999999999999,
+      "actual_next_month_chlorophyll_max_ug_l": 10.5,
+      "current_inputs": {
+        "temperature_c_median": 29.0,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.25
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.549999999999997,
+        "pH_median": -0.05000000000000071,
+        "DO_mg_l_median": -0.6650000000000009
+      },
+      "probability": 0.6953,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 15.450000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 18.1,
+      "current_inputs": {
+        "temperature_c_median": 28.5,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.37
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.7000000000000028,
+        "pH_median": 0.0,
+        "DO_mg_l_median": -0.6000000000000005
+      },
+      "probability": 0.5303,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.2,
+      "actual_next_month_chlorophyll_max_ug_l": 8.62,
+      "current_inputs": {
+        "temperature_c_median": 28.1,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.095000000000001
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.6000000000000014,
+        "pH_median": -0.1999999999999993,
+        "DO_mg_l_median": -1.0399999999999991
+      },
+      "probability": 0.4363,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 9.385,
+      "actual_next_month_chlorophyll_max_ug_l": 13.1,
+      "current_inputs": {
+        "temperature_c_median": 27.6,
+        "pH_median": 8.0,
+        "DO_mg_l_median": 5.7
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.25,
+        "pH_median": 0.25,
+        "DO_mg_l_median": 0.6450000000000005
+      },
+      "probability": 0.2214,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-06",
+      "target_month": "2021-07",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 5.15,
+      "actual_next_month_chlorophyll_max_ug_l": 7.29,
+      "current_inputs": {
+        "temperature_c_median": 27.799999999999997,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 6.75
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.1499999999999986,
+        "pH_median": -0.20000000000000107,
+        "DO_mg_l_median": -1.1500000000000004
+      },
+      "probability": 0.4939,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 32.9,
+      "actual_next_month_chlorophyll_max_ug_l": 36.1,
+      "current_inputs": {
+        "temperature_c_median": 28.65,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 7.109999999999999
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.05000000000000071,
+        "pH_median": -0.15000000000000213,
+        "DO_mg_l_median": -0.16500000000000092
+      },
+      "probability": 0.2394,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 14.25,
+      "actual_next_month_chlorophyll_max_ug_l": 15.9,
+      "current_inputs": {
+        "temperature_c_median": 28.8,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.565
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.1999999999999993,
+        "pH_median": -0.15000000000000036,
+        "DO_mg_l_median": -0.040000000000000036
+      },
+      "probability": 0.2148,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.2,
+      "actual_next_month_chlorophyll_max_ug_l": 4.82,
+      "current_inputs": {
+        "temperature_c_median": 28.549999999999997,
+        "pH_median": 8.350000000000001,
+        "DO_mg_l_median": 7.9
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.45000000000000284,
+        "pH_median": 0.10000000000000142,
+        "DO_mg_l_median": 0.6500000000000004
+      },
+      "probability": 0.1504,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 15.9,
+      "actual_next_month_chlorophyll_max_ug_l": 23.6,
+      "current_inputs": {
+        "temperature_c_median": 29.15,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.125
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.6499999999999986,
+        "pH_median": 0.15000000000000036,
+        "DO_mg_l_median": 0.7549999999999999
+      },
+      "probability": 0.1135,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 16.345,
+      "actual_next_month_chlorophyll_max_ug_l": 29.1,
+      "current_inputs": {
+        "temperature_c_median": 28.8,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 7.625
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.6999999999999993,
+        "pH_median": 0.15000000000000036,
+        "DO_mg_l_median": 0.5299999999999994
+      },
+      "probability": 0.1644,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 15.780000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 23.3,
+      "current_inputs": {
+        "temperature_c_median": 30.0,
+        "pH_median": 7.55,
+        "DO_mg_l_median": 4.695
+      },
+      "monthly_delta": {
+        "temperature_c_median": 2.3999999999999986,
+        "pH_median": -0.4500000000000002,
+        "DO_mg_l_median": -1.005
+      },
+      "probability": 0.6579,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-07",
+      "target_month": "2021-08",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 78.1,
+      "actual_next_month_chlorophyll_max_ug_l": 140.0,
+      "current_inputs": {
+        "temperature_c_median": 28.299999999999997,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 7.305
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.5,
+        "pH_median": 0.20000000000000107,
+        "DO_mg_l_median": 0.5549999999999997
+      },
+      "probability": 0.3011,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 23.05,
+      "actual_next_month_chlorophyll_max_ug_l": 26.0,
+      "current_inputs": {
+        "temperature_c_median": 30.15,
+        "pH_median": 7.949999999999999,
+        "DO_mg_l_median": 6.04
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.5,
+        "pH_median": -0.25,
+        "DO_mg_l_median": -1.0699999999999994
+      },
+      "probability": 0.4288,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 14.100000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 18.1,
+      "current_inputs": {
+        "temperature_c_median": 29.9,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 6.775
+      },
+      "monthly_delta": {
+        "temperature_c_median": 1.0999999999999979,
+        "pH_median": 0.05000000000000071,
+        "DO_mg_l_median": -0.79
+      },
+      "probability": 0.4678,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 5.69,
+      "actual_next_month_chlorophyll_max_ug_l": 6.48,
+      "current_inputs": {
+        "temperature_c_median": 28.950000000000003,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 7.08
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.4000000000000057,
+        "pH_median": -0.05000000000000071,
+        "DO_mg_l_median": -0.8200000000000003
+      },
+      "probability": 0.5451,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 36.75,
+      "actual_next_month_chlorophyll_max_ug_l": 52.2,
+      "current_inputs": {
+        "temperature_c_median": 29.95,
+        "pH_median": 8.45,
+        "DO_mg_l_median": 6.77
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.8000000000000007,
+        "pH_median": 0.049999999999998934,
+        "DO_mg_l_median": -1.3550000000000004
+      },
+      "probability": 0.7733,
+      "predicted": 1,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 8.379999999999999,
+      "actual_next_month_chlorophyll_max_ug_l": 10.7,
+      "current_inputs": {
+        "temperature_c_median": 28.950000000000003,
+        "pH_median": 8.5,
+        "DO_mg_l_median": 7.47
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.15000000000000213,
+        "pH_median": 0.09999999999999964,
+        "DO_mg_l_median": -0.15500000000000025
+      },
+      "probability": 0.2539,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 17.3,
+      "actual_next_month_chlorophyll_max_ug_l": 22.8,
+      "current_inputs": {
+        "temperature_c_median": 30.8,
+        "pH_median": 7.8999999999999995,
+        "DO_mg_l_median": 4.68
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.8000000000000007,
+        "pH_median": 0.34999999999999964,
+        "DO_mg_l_median": -0.015000000000000568
+      },
+      "probability": 0.7596,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-08",
+      "target_month": "2021-09",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 20.275000000000002,
+      "actual_next_month_chlorophyll_max_ug_l": 34.6,
+      "current_inputs": {
+        "temperature_c_median": 28.7,
+        "pH_median": 8.850000000000001,
+        "DO_mg_l_median": 7.345
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.40000000000000213,
+        "pH_median": 0.5500000000000007,
+        "DO_mg_l_median": 0.040000000000000036
+      },
+      "probability": 0.2667,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 24.1,
+      "actual_next_month_chlorophyll_max_ug_l": 26.1,
+      "current_inputs": {
+        "temperature_c_median": 29.15,
+        "pH_median": 7.699999999999999,
+        "DO_mg_l_median": 6.025
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.0,
+        "pH_median": -0.25,
+        "DO_mg_l_median": -0.01499999999999968
+      },
+      "probability": 0.6377,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 14.55,
+      "actual_next_month_chlorophyll_max_ug_l": 14.6,
+      "current_inputs": {
+        "temperature_c_median": 29.2,
+        "pH_median": 8.05,
+        "DO_mg_l_median": 6.71
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.6999999999999993,
+        "pH_median": -0.25,
+        "DO_mg_l_median": -0.06500000000000039
+      },
+      "probability": 0.7296,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.855,
+      "actual_next_month_chlorophyll_max_ug_l": 9.46,
+      "current_inputs": {
+        "temperature_c_median": 29.1,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 6.955
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.14999999999999858,
+        "pH_median": -0.05000000000000071,
+        "DO_mg_l_median": -0.125
+      },
+      "probability": 0.3152,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 58.4,
+      "actual_next_month_chlorophyll_max_ug_l": 60.4,
+      "current_inputs": {
+        "temperature_c_median": 29.45,
+        "pH_median": 8.5,
+        "DO_mg_l_median": 7.734999999999999
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.5,
+        "pH_median": 0.05000000000000071,
+        "DO_mg_l_median": 0.9649999999999999
+      },
+      "probability": 0.4856,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 12.55,
+      "actual_next_month_chlorophyll_max_ug_l": 13.0,
+      "current_inputs": {
+        "temperature_c_median": 29.35,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 6.975
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.3999999999999986,
+        "pH_median": -0.1999999999999993,
+        "DO_mg_l_median": -0.4950000000000001
+      },
+      "probability": 0.245,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 12.094999999999999,
+      "actual_next_month_chlorophyll_max_ug_l": 19.9,
+      "current_inputs": {
+        "temperature_c_median": 30.0,
+        "pH_median": 7.8,
+        "DO_mg_l_median": 5.15
+      },
+      "monthly_delta": {
+        "temperature_c_median": -0.8000000000000007,
+        "pH_median": -0.09999999999999964,
+        "DO_mg_l_median": 0.47000000000000064
+      },
+      "probability": 0.5725,
+      "predicted": 1,
+      "correct": false
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-09",
+      "target_month": "2021-10",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 10.25,
+      "actual_next_month_chlorophyll_max_ug_l": 14.4,
+      "current_inputs": {
+        "temperature_c_median": 29.45,
+        "pH_median": 8.5,
+        "DO_mg_l_median": 6.92
+      },
+      "monthly_delta": {
+        "temperature_c_median": 0.75,
+        "pH_median": -0.3500000000000014,
+        "DO_mg_l_median": -0.4249999999999998
+      },
+      "probability": 0.2452,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 10.5,
+      "actual_next_month_chlorophyll_max_ug_l": 10.5,
+      "current_inputs": {
+        "temperature_c_median": 26.5,
+        "pH_median": 7.9,
+        "DO_mg_l_median": 7.415
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.6499999999999986,
+        "pH_median": 0.20000000000000107,
+        "DO_mg_l_median": 1.3899999999999997
+      },
+      "probability": 0.1449,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 15.0,
+      "actual_next_month_chlorophyll_max_ug_l": 15.0,
+      "current_inputs": {
+        "temperature_c_median": 27.0,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 7.845000000000001
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.1999999999999993,
+        "pH_median": 0.049999999999998934,
+        "DO_mg_l_median": 1.1350000000000007
+      },
+      "probability": 0.1915,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 4.63,
+      "actual_next_month_chlorophyll_max_ug_l": 4.63,
+      "current_inputs": {
+        "temperature_c_median": 26.5,
+        "pH_median": 8.149999999999999,
+        "DO_mg_l_median": 7.58
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.6000000000000014,
+        "pH_median": -0.10000000000000142,
+        "DO_mg_l_median": 0.625
+      },
+      "probability": 0.1721,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 1,
+      "actual_next_month_chlorophyll_ug_l": 47.0,
+      "actual_next_month_chlorophyll_max_ug_l": 47.0,
+      "current_inputs": {
+        "temperature_c_median": 26.8,
+        "pH_median": 8.399999999999999,
+        "DO_mg_l_median": 7.475
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.6499999999999986,
+        "pH_median": -0.10000000000000142,
+        "DO_mg_l_median": -0.2599999999999998
+      },
+      "probability": 0.1866,
+      "predicted": 0,
+      "correct": false
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 13.9,
+      "actual_next_month_chlorophyll_max_ug_l": 13.9,
+      "current_inputs": {
+        "temperature_c_median": 26.4,
+        "pH_median": 8.25,
+        "DO_mg_l_median": 7.95
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.950000000000003,
+        "pH_median": -0.05000000000000071,
+        "DO_mg_l_median": 0.9750000000000005
+      },
+      "probability": 0.1782,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 10.9,
+      "actual_next_month_chlorophyll_max_ug_l": 11.2,
+      "current_inputs": {
+        "temperature_c_median": 26.65,
+        "pH_median": 7.800000000000001,
+        "DO_mg_l_median": 6.4399999999999995
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.3500000000000014,
+        "pH_median": 8.881784197001252e-16,
+        "DO_mg_l_median": 1.2899999999999991
+      },
+      "probability": 0.1475,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-10",
+      "target_month": "2021-11",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 16.3,
+      "actual_next_month_chlorophyll_max_ug_l": 16.3,
+      "current_inputs": {
+        "temperature_c_median": 26.25,
+        "pH_median": 8.05,
+        "DO_mg_l_median": 7.7
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.1999999999999993,
+        "pH_median": -0.4499999999999993,
+        "DO_mg_l_median": 0.7800000000000002
+      },
+      "probability": 0.1805,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11562",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 9.29,
+      "actual_next_month_chlorophyll_max_ug_l": 9.29,
+      "current_inputs": {
+        "temperature_c_median": 23.2,
+        "pH_median": 7.8,
+        "DO_mg_l_median": 6.67
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.3000000000000007,
+        "pH_median": -0.10000000000000053,
+        "DO_mg_l_median": -0.7450000000000001
+      },
+      "probability": 0.0811,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11569",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 29.4,
+      "actual_next_month_chlorophyll_max_ug_l": 29.4,
+      "current_inputs": {
+        "temperature_c_median": 22.6,
+        "pH_median": 8.1,
+        "DO_mg_l_median": 7.84
+      },
+      "monthly_delta": {
+        "temperature_c_median": -4.399999999999999,
+        "pH_median": 0.0,
+        "DO_mg_l_median": -0.005000000000000782
+      },
+      "probability": 0.1638,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11573",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 34.1,
+      "actual_next_month_chlorophyll_max_ug_l": 34.1,
+      "current_inputs": {
+        "temperature_c_median": 24.0,
+        "pH_median": 8.3,
+        "DO_mg_l_median": 8.11
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.5,
+        "pH_median": 0.15000000000000213,
+        "DO_mg_l_median": 0.5299999999999994
+      },
+      "probability": 0.0436,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "11576",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 11.9,
+      "actual_next_month_chlorophyll_max_ug_l": 11.9,
+      "current_inputs": {
+        "temperature_c_median": 23.6,
+        "pH_median": 8.2,
+        "DO_mg_l_median": 8.11
+      },
+      "monthly_delta": {
+        "temperature_c_median": -3.1999999999999993,
+        "pH_median": -0.1999999999999993,
+        "DO_mg_l_median": 0.6349999999999998
+      },
+      "probability": 0.0432,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "12877",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 39.9,
+      "actual_next_month_chlorophyll_max_ug_l": 39.9,
+      "current_inputs": {
+        "temperature_c_median": 24.2,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.3
+      },
+      "monthly_delta": {
+        "temperature_c_median": -2.1999999999999993,
+        "pH_median": 0.15000000000000036,
+        "DO_mg_l_median": 0.35000000000000053
+      },
+      "probability": 0.1079,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "17625",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 7.745000000000001,
+      "actual_next_month_chlorophyll_max_ug_l": 10.8,
+      "current_inputs": {
+        "temperature_c_median": 21.2,
+        "pH_median": 7.9,
+        "DO_mg_l_median": 8.21
+      },
+      "monthly_delta": {
+        "temperature_c_median": -5.449999999999999,
+        "pH_median": 0.09999999999999964,
+        "DO_mg_l_median": 1.7700000000000014
+      },
+      "probability": 0.0754,
+      "predicted": 0,
+      "correct": true
+    },
+    {
+      "station_id": "31067",
+      "input_month": "2021-11",
+      "target_month": "2021-12",
+      "actual": 0,
+      "actual_next_month_chlorophyll_ug_l": 22.7,
+      "actual_next_month_chlorophyll_max_ug_l": 22.7,
+      "current_inputs": {
+        "temperature_c_median": 24.4,
+        "pH_median": 8.4,
+        "DO_mg_l_median": 8.38
+      },
+      "monthly_delta": {
+        "temperature_c_median": -1.8500000000000014,
+        "pH_median": 0.34999999999999964,
+        "DO_mg_l_median": 0.6800000000000006
+      },
+      "probability": 0.0552,
+      "predicted": 0,
+      "correct": true
+    }
+  ],
+  "limitations": [
+    "Only a chlorophyll-based proxy; not verified harmful blooms",
+    "Historical Okeechobee satellite feature values absent; do not claim satellite-fusion validation",
+    "Potential station-level dependence and small positive class; results preliminary",
+    "No Laguna de Bay model accuracy implied"
+  ]
+}

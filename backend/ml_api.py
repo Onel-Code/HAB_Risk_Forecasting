@@ -206,3 +206,9 @@ app.add_api_route(
 from backend.demo_pipeline import replay_preview, run_replay
 app.add_api_route('/auto-forecast/demo/{month}', replay_preview, methods=['GET'], tags=['Pipeline simulation'])
 app.add_api_route('/auto-forecast/demo/{month}', run_replay, methods=['POST'], tags=['Pipeline simulation'])
+
+# PROTECTED_ESP32_DEVICE_INGEST_V1
+from backend.insitu_ingest import ingest_device_reading
+app.add_api_route(
+    '/api/insitu/reading', ingest_device_reading, methods=['POST'],
+    tags=['In-situ hardware ingestion'])
